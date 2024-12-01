@@ -1,4 +1,4 @@
-import { textFileToLines } from "./utils/string.ts";
+import { textFileToLines } from "../utils/string.ts";
 
 export function partA(textFile: string) {
   const lines = textFileToLines(textFile);

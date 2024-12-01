@@ -27,7 +27,7 @@ export function partB(textFile: string) {
   const secondDictionary = secondList.reduce((map, taskId) => {
     const item = map.get(taskId) ?? 0;
     return map.set(taskId, item + 1);
-  }, new Map());
+  }, new Map<number, number>());
 
   const similarityScores = firstList.map((listItem) => {
     const occurrences = secondDictionary.get(listItem) ?? 0;

@@ -1,3 +1,5 @@
+import { textFileToLines } from "./utils/string.ts";
+
 export function partA(textFile: string) {
   const lines = textFileToLines(textFile);
 
@@ -60,8 +62,4 @@ function linesToTwoLists(lines: string[]): [number[], number[]] {
     },
     [[], []],
   );
-}
-
-function textFileToLines(textFile: string) {
-  return textFile.split("\n").filter((line) => line !== "");
 }

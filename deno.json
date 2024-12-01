@@ -1,6 +1,6 @@
 {
   "tasks": {
-    "day1": "deno run --allow-read src/day1/main.ts",
+    "day:1": "deno run --allow-read src/day1/main.ts",
     "test": "deno test --allow-read"
   },
   "imports": {

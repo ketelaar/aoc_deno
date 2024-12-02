@@ -1,6 +1,6 @@
 import { textFileToLines } from "../utils/string.ts";
 
-export function partA(textFile: string) {
+export function part1(textFile: string) {
   const lines = textFileToLines(textFile);
 
   const safeReports = lines.map((report) => {
@@ -11,7 +11,7 @@ export function partA(textFile: string) {
   return safeReports.reduce(countNumberOfSafeReports, 0);
 }
 
-export function partB(textFile: string) {
+export function part2(textFile: string) {
   const lines = textFileToLines(textFile);
 
   const safeReports = lines.map((report) => {
@@ -27,10 +27,10 @@ export function partB(textFile: string) {
 export async function main() {
   const text = await Deno.readTextFile("./src/day2/input.txt");
 
-  const answerA = partA(text);
+  const answerA = part1(text);
   console.log(`Total number of safe reports is ${answerA}`);
 
-  const answerB = partB(text);
+  const answerB = part2(text);
   console.log(
     `Total number of safe reports using the "Problem Dampener" is ${answerB}`,
   );

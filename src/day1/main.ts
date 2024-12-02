@@ -1,6 +1,6 @@
 import { textFileToLines } from "../utils/string.ts";
 
-export function partA(textFile: string) {
+export function part1(textFile: string) {
   const lines = textFileToLines(textFile);
 
   const [firstList, secondList] = linesToTwoLists(lines);
@@ -19,7 +19,7 @@ export function partA(textFile: string) {
   }, 0);
 }
 
-export function partB(textFile: string) {
+export function part2(textFile: string) {
   const lines = textFileToLines(textFile);
 
   const [firstList, secondList] = linesToTwoLists(lines);
@@ -40,10 +40,10 @@ export function partB(textFile: string) {
 export async function main() {
   const text = await Deno.readTextFile("./src/day1/input.txt");
 
-  const answerA = partA(text);
+  const answerA = part1(text);
   console.log(`Total distance between the lists for part A is ${answerA}`);
 
-  const answerB = partB(text);
+  const answerB = part2(text);
   console.log(`Similarity score between left and right lists is ${answerB}`);
 }
 

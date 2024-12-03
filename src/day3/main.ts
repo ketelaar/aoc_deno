@@ -5,7 +5,7 @@ export function part1(textFile: string) {
 }
 
 export function part2(textFile: string) {
-  // captures all text between a "don't()" and a "do()"
+  // captures all text (going over newlines) between a "don't()" and a "do()"
   const dontGroupRegex = new RegExp(
     "(?:don't\\(\\))(.|\\n)*?(?:do\\(\\))",
     "g",
@@ -39,8 +39,8 @@ function getMulResult(mulString: string) {
  * @returns list of strings in the form mul(x,y) with x and y being integers
  */
 function extractMulStrings(textFile: string) {
-  //  all substrings with mul(x,y) with x and y being integers with at least 1 digit and at most 3
-  const mulRegex = new RegExp("mul\\([0-9]{1,3},[0-9]{1,3}\\)", "g");
+  //  all substrings with mul(x,y) with x and y having at least 1 digit and at most 3
+  const mulRegex = new RegExp("mul\\(\\d{1,3},\\d{1,3}\\)", "g");
 
   return textFile.matchAll(mulRegex).map((execArray) => execArray[0]);
 }
